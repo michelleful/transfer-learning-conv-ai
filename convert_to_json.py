@@ -4,7 +4,7 @@ import random
 train = list()
 valid = list()
 
-with open("zipQA3.txt", "r") as f:
+with open("/usr/cs/public/brmijo/zipQA3.txt", "r") as f:
     for i, line in enumerate(f):
         if i == 0:
             continue
