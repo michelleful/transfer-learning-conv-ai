@@ -52,7 +52,7 @@ def build_input_from_segments(history, reply, tokenizer, lm_labels=False, with_e
     bos, eos, speaker1, speaker2 = tokenizer.convert_tokens_to_ids(SPECIAL_TOKENS[:-1])
 
     instance = {}
-    sequence = [[bos] + history + [reply + ([eos] if with_eos else [])]
+    sequence = [[bos] + history + [reply + ([eos] if with_eos else [])]]
     sequence = [sequence[0]] + [[speaker2 if (len(sequence)-i) %
                                  2 else speaker1] + s for i, s in enumerate(sequence[1:])]
 
